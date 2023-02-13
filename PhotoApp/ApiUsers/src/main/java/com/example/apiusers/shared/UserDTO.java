@@ -9,7 +9,7 @@ public class UserDTO implements Serializable {
     private String email;
     private String password;
     private String userId;
-    private String encryptedUserId;
+    private String encryptedPasswordId;
 
     public String getFirstName() {
         return firstName;
@@ -51,11 +51,11 @@ public class UserDTO implements Serializable {
         this.userId = userId;
     }
 
-    public String getEncryptedUserId() {
-        return encryptedUserId;
+    public String getEncryptedPasswordId() {
+        return encryptedPasswordId;
     }
 
-    public void setEncryptedUserId(String encryptedUserId) {
-        this.encryptedUserId = encryptedUserId;
+    public void setEncryptedPasswordId(String encryptedPasswordId) {
+        this.encryptedPasswordId = encryptedPasswordId;
     }
 }
