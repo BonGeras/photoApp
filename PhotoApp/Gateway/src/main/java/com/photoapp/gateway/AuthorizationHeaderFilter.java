@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import java.io.IOException;
+
 @Component
 public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory<AuthorizationHeaderFilter.Config> {
 
@@ -51,11 +53,13 @@ public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory<Auth
 
     private boolean isJWTValid(String jwt) {
         boolean returnValue = true;
-        String subject = Jwts.parser().setSigningKey(env.getProperty("token.secret"))
-                .parseClaimsJws(jwt)
-                .getBody()
-                .getSubject();
-
+        String subject = null;
+        try {
+            subject = Jwts.parser().setSigningKey(env.getProperty("token.secret")).parseClaimsJws(jwt)
+                    .getBody().getSubject();
+        } catch (Exception ex) {
+            returnValue = false;
+        }
         if (subject == null || subject.isEmpty()) {
             returnValue = false;
         }
