@@ -21,9 +21,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="AccountManagement" options="-parameters" />
+      <module name="AccountManagement" options="" />
       <module name="ApiUsers" options="-parameters" />
-      <module name="EurekaServer" options="-parameters" />
+      <module name="EurekaServer" options="" />
       <module name="Gateway" options="-parameters" />
     </option>
   </component>
