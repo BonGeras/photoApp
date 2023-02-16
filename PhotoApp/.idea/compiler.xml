@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ApiUsers" />
         <module name="EurekaServer" />
+        <module name="ConfigServer" />
         <module name="Gateway" />
         <module name="AccountManagement" />
       </profile>
@@ -15,15 +16,17 @@
     <bytecodeTargetLevel>
       <module name="AccountManagement" target="17" />
       <module name="ApiUsers" target="17" />
+      <module name="ConfigServer" target="17" />
       <module name="EurekaServer" target="17" />
       <module name="Gateway" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="AccountManagement" options="" />
+      <module name="AccountManagement" options="-parameters" />
       <module name="ApiUsers" options="-parameters" />
-      <module name="EurekaServer" options="" />
+      <module name="ConfigServer" options="-parameters" />
+      <module name="EurekaServer" options="-parameters" />
       <module name="Gateway" options="-parameters" />
     </option>
   </component>
